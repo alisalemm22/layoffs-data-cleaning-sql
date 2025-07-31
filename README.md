@@ -1,47 +1,53 @@
-# 📊 Layoffs Data Analysis Using MySQL
+🧹 SQL Data Cleaning Project: Global Layoffs (2022–2023)
+📊 Dataset
+Source: Kaggle - Layoffs 2022
 
-## 🔍 Project Overview
-This project dives into global tech layoffs between 2020–2023 using **MySQL**. It focuses on transforming raw data into structured insights by performing **Exploratory Data Analysis (EDA)** with SQL.
+A global dataset capturing company layoffs during the economic downturn of 2022 and 2023
 
-Dataset source: [Layoffs Dataset from Kaggle](https://www.kaggle.com/datasets/swaptr/layoffs-2022)
+🎯 Project Goal
+Clean the raw data using SQL for reliable analysis:
 
----
+Remove duplicate rows
 
-## 🎯 Objectives
-- Clean and prepare the dataset for analysis
-- Explore layoffs by **industry**, **company**, **funding stage**, and **timeline**
-- Identify **top 5 companies with most layoffs per year**
-- Prepare data for potential dashboard visualization
+Standardize text fields (company names, countries, industries)
 
----
+Convert date formats
 
-## 🧠 Key SQL Concepts Applied
-- Common Table Expressions (CTEs)
-- Window Functions (`DENSE_RANK`, `SUM OVER`)
-- Aggregations and `GROUP BY`
-- String & Date Functions (`SUBSTRING`, `YEAR`)
-- Filtering and sorting for insights
+Handle missing/null values
 
----
+Finalize a clean, analysis-ready dataset
 
-## 🗃 Dataset Details
-The dataset includes:
-- Company names
-- Industry sectors
-- Layoff totals and percentages
-- Country and funding stage
-- Dates of layoff announcements
+🛠️ Tools Used
+MySQL Workbench
 
-Time range: 2020 to early 2023
+SQL (CTEs, UPDATE, DELETE, ROW_NUMBER, JOINS)
 
----
+Kaggle CSV to SQL import
 
-## 🧼 Data Cleaning Summary
-- Removed duplicates
-- Standardized values (company, industry, country)
-- Corrected date formats
-- Cleaned nulls logically
+🧽 Data Cleaning Steps
+Created a staging table to preserve the original dataset
 
----
+Removed duplicates using ROW_NUMBER() and partitioning
 
-## 🛠 Too
+Trimmed company names and removed inconsistencies
+
+Standardized industry labels (e.g., unified "Crypto" variations)
+
+Cleaned country names (e.g., removed trailing punctuation)
+
+Fixed date format and converted TEXT → DATE
+
+Filled missing industry values by joining on company names
+
+Removed rows with no layoff info
+
+Dropped unnecessary helper columns after cleanup
+
+✅ Final Table
+Clean and consistent structure ready for:
+
+Exploratory Data Analysis (EDA)
+
+Visualization
+
+Reporting
